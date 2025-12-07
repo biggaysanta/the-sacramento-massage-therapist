@@ -1,0 +1,16 @@
+{{ define "main" }}
+  {{ .Content }}
+  {{ with $announcements := site.GetPage "section" "announcements" }}
+      <h3>{{ .LinkTitle }}</h3>
+      {{ .Content }}
+      <div id="announcements-wrapper" class="flex md:flex-row justify-between items-center bg-sky-100 box-style houndstooth">
+      {{ range $announcements.Pages }}
+        
+      <details class="bg-gray-200 dark:bg-gray-700 m-2 p-2 text-black dark:text-neutral-50 box-style endless-clouds">
+          <summary class="border border-gray-800 box-style houndstooth">{{ .Title }}</summary>
+          {{ .Content }}
+        </details>
+      {{ end }}
+      </div>
+  {{ end }}
+{{ end }}

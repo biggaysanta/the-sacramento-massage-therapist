@@ -1,0 +1,39 @@
+
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@layer theme {--color-base: oklch(1 0.1 120);
+    --color-base-100: oklch(0.95 0.1 120); 
+    --color-base-200: oklch(0.9 0.1 120); 
+        --color-base-300: oklch(0.8 0.1 120); 
+    --color-base-400: oklch(0.6 0.1 120); 
+    --color-base-500: oklch(0.5 0.1 120);
+    --color-base-600: oklch(0.4 0.1 120); 
+    --color-base-700: oklch(0.2 0.1 120); 
+    --color-base-800: oklch(0.15 0.1 120); 
+    --color-base-900: oklch(0.1 0.1 120); 
+}
+    
+@layer utilities {
+    .box-style { @apply shadow rounded-lg; }
+    .top-bar { @apply top-0 z-99 sticky flex justify-between items-center bg-linear-to-b from-green-50 to-green-300;}
+    .author-pic { @apply mx-auto rounded-full;}
+    .page-wrapper { @apply mx-auto max-w-4xl;}
+}
+@layer base {
+    body { @apply bg-gradient-to-t from-green-50 to-green-900 no-underline;}
+    header { @apply mb-1;
+     }
+     a {@apply no-underline;}
+}
+@layer components {
+  
+    nav { @apply justify-between items-center navbar-center;}
+    nav ul {}
+    nav ul li { @apply shadow-lg;
+        @apply items-center rounded-full h-full text-center text-nowrap;
+        @apply justify-between bg-linear-to-r hover:bg-linear-to-l from-red-100 to-transparent border-red-200 border-r border-b;}
+        nav ul li:hover {@apply border-t border-l translate-y-0.5;}    
+
+    nav ul li a { @apply m-1 w-auto text-red-400 no-underline;}
+    }

@@ -1,0 +1,26 @@
+<div class="bg-white shadow-md p-4 rounded-lg text-deep-ink">
+  <h3 class="mb-4 pb-2 border-b-2 font-heading">Related Content</h3>
+  <ul class="space-y-2">
+    {{ $related := site.RegularPages.Related . | first 5 }}
+{{ with $related }}
+  <h2>See Also</h2>
+  <ul>
+    {{ range $i, $p := . }}
+      <li>
+        <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+        {{ with .HeadingsFiltered }}
+          <ul>
+            {{ range . }}
+              {{ $link := printf "%s#%s" $p.RelPermalink .ID | safeURL }}
+              <li>
+                <a href="{{ $link }}">{{ .Title }}</a>
+              </li>
+            {{ end }}
+          </ul>
+        {{ end }}
+      </li>
+    {{ end }}
+  </ul>
+{{ end }}
+  </ul>
+</div>

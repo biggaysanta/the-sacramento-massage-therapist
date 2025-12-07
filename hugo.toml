@@ -1,0 +1,49 @@
+baseURL = 'https://paulbrown.net/'
+languageCode = 'en-us'
+title = 'The Sacramento Massage Therapist'
+theme = 'theme'
+[params]
+logo='/images/logo.svg'
+ subtitle = 'Paul Brown, CMT<sub>CAMTC 17813</sub><br/>Expert Massage Therapist in Sacramento'
+ author = 'Paul Brown, CMT'
+address = '717 K St, Suite 204, Sacramento'
+phone = '916-534-8772'
+
+[build]
+  [build.buildStats]
+    enable = true
+  [[build.cachebusters]]
+    source = 'assets/notwatching/hugo_stats\.json'
+    target = 'css'
+  [[build.cachebusters]]
+    source ='tailwind.config.js'
+    target = 'css'
+[module]
+  [[module.mounts]]
+    source = 'assets'
+    target = 'assets'
+  [[module.mounts]]
+    disableWatch = true
+    source = 'hugo_stats.json'
+    target = 'assets/notwatching/hugo_stats.json'
+
+[[menu.main]]
+name='home'
+url='/'
+weight=1
+[[menu.main]]
+name='book now!'
+url='https://paulbrown.noterro.com'
+weight=2
+[[menu.main]]
+name='buy eGift cards'
+url='https://squareup.com/order'
+weight=3
+[[menu.main]]
+name='contact'
+url='/#contact'
+weight=4
+[[menu.main]]
+name='location'
+url='/#location'
+weight=5
