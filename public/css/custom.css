@@ -1,0 +1,247 @@
+
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@plugin "flyonui";
+
+@theme {
+
+  --color-dusk: oklch(0.05 0 0);
+  --color-deep-ink: oklch(var(--color-deep-ink-950));
+  --color-sandalwood: oklch(var(--color-sandalwood-300));
+  --color-dusty-rose: oklch(var(--color-dusty-rose-200));
+  --color-french-rose: oklch(var(--color-french-rose-300));
+  --color-muted-clay: oklch(var(--color-muted-clay-300));
+  --color-palest-yellow: oklch(var(--color-palest-yellow-50));
+  --color-whisper-green: oklch(var(--color-whisper-green-100));
+      
+  --color-base-content: oklch(var(--color-muted-clay));
+
+  --color-deep-ink-50: oklch(0.96 0.01 240);
+  --color-deep-ink-100: oklch(0.92 0.02 240);
+  --color-deep-ink-200: oklch(0.84 0.04 240);
+  --color-deep-ink-300: oklch(0.75 0.06 240);
+  --color-deep-ink-400: oklch(0.66 0.07 240);
+  --color-deep-ink-500: oklch(0.57 0.08 240);
+  --color-deep-ink-600: oklch(0.48 0.07 240);
+  --color-deep-ink-700: oklch(0.39 0.06 240);
+  --color-deep-ink-800: oklch(0.30 0.05 240);
+  --color-deep-ink-900: oklch(0.21 0.04 240);
+  --color-deep-ink-950: oklch(0.12 0.03 240);       /* Original deep-ink */
+
+  --color-sandalwood-50: oklch(0.98 0.001 44);
+  --color-sandalwood-100: oklch(0.95 0.002 44);
+  --color-sandalwood-200: oklch(0.88 0.003 44);
+  --color-sandalwood-300: oklch(0.81 0.004 44);
+  --color-sandalwood-400: oklch(0.74 0.004 44);
+  --color-sandalwood-500: oklch(0.67 0.004 44);
+  --color-sandalwood-600: oklch(0.60 0.004 44);
+  --color-sandalwood-700: oklch(0.53 0.003 44);
+            /* Original sandalwood is ~750 */
+  --color-sandalwood-800: oklch(0.46 0.003 44);
+  --color-sandalwood-900: oklch(0.39 0.002 44);
+  --color-sandalwood-950: oklch(0.32 0.002 44);
+
+  --color-dusty-rose-50: oklch(0.99 0.005 19);
+  --color-dusty-rose-100: oklch(0.97 0.008 19);
+  --color-dusty-rose-200: oklch(0.94 0.01 19);       /* Original dusty-rose */
+  --color-dusty-rose-300: oklch(0.91 0.012 19);
+  --color-dusty-rose-400: oklch(0.88 0.015 19);
+  --color-dusty-rose-500: oklch(0.85 0.018 19);
+  --color-dusty-rose-600: oklch(0.82 0.02 19);
+  --color-dusty-rose-700: oklch(0.79 0.022 19);
+  --color-dusty-rose-800: oklch(0.76 0.025 19);
+  --color-dusty-rose-900: oklch(0.73 0.028 19);
+  --color-dusty-rose-950: oklch(0.70 0.03 19);
+
+  --color-french-rose-50: oklch(0.99 0.01 18);
+  --color-french-rose-100: oklch(0.96 0.02 18);
+  --color-french-rose-200: oklch(0.91 0.03 18);
+
+/* Original french-rose */
+  --color-french-rose-300: oklch(0.85 0.04 18);
+
+  --color-french-rose-400: oklch(0.79 0.05 18);
+  --color-french-rose-500: oklch(0.73 0.06 18);
+  --color-french-rose-600: oklch(0.67 0.05 18);
+  --color-french-rose-700: oklch(0.61 0.04 18);
+  --color-french-rose-800: oklch(0.55 0.03 18);
+  --color-french-rose-900: oklch(0.49 0.02 18);
+  --color-french-rose-950: oklch(0.43 0.01 18);
+
+  --color-muted-clay-50: oklch(0.98 0.02 20);
+    --color-muted-clay-100: oklch(0.95 0.03 20);
+    --color-muted-clay-200: oklch(0.86 0.05 20);
+
+/* original muted clay */
+    --color-muted-clay-300: oklch(0.77 0.07 20);
+
+    --color-muted-clay-400: oklch(0.68 0.08 20);
+    --color-muted-clay-500: oklch(0.59 0.09 20);
+    --color-muted-clay-600: oklch(0.50 0.08 20);
+    --color-muted-clay-700: oklch(0.41 0.07 20);
+    --color-muted-clay-800: oklch(0.32 0.06 20);
+    --color-muted-clay-900: oklch(0.23 0.05 20);
+    --color-muted-clay-950: oklch(0.18 0.04 20);
+  
+    /* Original palest-yellow */
+    --color-palest-yellow-50: oklch(0.99 0.009 90);
+  
+    --color-palest-yellow-100: oklch(0.97 0.012 90);
+    --color-palest-yellow-200: oklch(0.94 0.015 90);
+    --color-palest-yellow-300: oklch(0.91 0.018 90);
+    --color-palest-yellow-400: oklch(0.88 0.021 90);
+    --color-palest-yellow-500: oklch(0.85 0.024 90);
+    --color-palest-yellow-600: oklch(0.82 0.027 90);
+    --color-palest-yellow-700: oklch(0.79 0.03 90);
+    --color-palest-yellow-800: oklch(0.76 0.033 90);
+    --color-palest-yellow-900: oklch(0.73 0.036 90);
+    --color-palest-yellow-950: oklch(0.70 0.039 90);
+    
+    /* Original whisper-green */
+    --color-whisper-green-50: oklch(0.99 0.0045 130);  
+  
+    --color-whisper-green-100: oklch(0.97 0.006 130);
+    --color-whisper-green-200: oklch(0.94 0.008 130);
+    --color-whisper-green-300: oklch(0.91 0.01 130);
+    --color-whisper-green-400: oklch(0.88 0.012 130);
+    --color-whisper-green-500: oklch(0.85 0.014 130);
+    --color-whisper-green-600: oklch(0.82 0.016 130);
+    --color-whisper-green-700: oklch(0.79 0.018 130);
+    --color-whisper-green-800: oklch(0.76 0.02 130);
+    --color-whisper-green-900: oklch(0.73 0.022 130);
+    --color-whisper-green-950: oklch(0.70 0.024 130);
+    
+}
+
+@layer base {
+  body { @apply bg-linear-to-t from-green-900 to-green-50;
+    @apply dark:bg-linear-to-b dark:from-green-900 dark:to-green-50;
+    @apply prose-headings:font-extralight prose-headings:font-stretch-50% prose-a:no-underline prose;
+    @apply dark:prose-invert;
+  }
+  header { @apply mb-0.5; }
+  footer { @apply mt-0.5; }
+
+  main { @apply container; }
+  aside { @apply container;}
+  nav { @apply container;}
+}
+  
+@layer components {
+  button {@apply shadow rounded-lg md:rounded-2xl w-full text-nowrap; }
+
+  nav {
+    /* full-width nav bar */
+    @apply z-60 shadow-xl rounded-box; 
+  }
+  
+  /* Top-level list: distribute across the full nav width */
+  nav ul {
+    @apply flex md:flex-row flex-col flex-wrap md:justify-between items-center m-0 p-0 w-full list-none;
+  }
+  
+  /* List items: position relative so absolutely-positioned submenus align to each parent */
+  nav ul li {  
+    @apply inline-block z-60 relative m-0 p-0 container;
+  }
+  
+  
+  /* Links inside menu: make the anchor the pill that wraps its contents */
+  nav ul li a {
+    @apply inline-flex items-center p-1 rounded-full w-full leading-normal;
+    
+    @apply 
+    border
+    border-t-dusty-rose-100 border-r-sandalwood border-b-sandalwood border-l-dusty-rose-100;
+    
+    @apply hover:border-t-sandalwood hover:border-r-dusty-rose-100 hover:border-b-dusty-rose-100 hover:border-l-sandalwood hover:translate-y-0.5;
+    
+  }
+  /* Submenu dropdown (hidden by default, shown on hover)
+     positioned relative to its parent <li> so it appears under/underlaps the parent pill */
+  nav ul li > ul {
+    @apply hidden md:absolute flex-col bg-white shadow-sm px-1.5 md:px-2 rounded-box w-full md:min-w-max;
+    @apply md:top-[calc(100%-0.6rem)] md:left-0;
+    position: static;
+    z-index: 20;
+  }
+  nav ul li:hover > ul,
+  nav ul li:focus-within > ul {
+    @apply block z-40 md:flex flex-col shadow; /* stacked on small screens, dropdown on md+ */
+  }
+  
+  /* Ensure each submenu list item is positioned relative so nested submenus align correctly */
+  nav ul li > ul li {
+    @apply block relative;
+  }
+  
+  nav ul li > ul li:hover > ul,
+  nav ul li > ul li:focus-within > ul {
+    @apply block z-50 md:flex flex-col shadow;
+  }
+}
+    
+@layer utilities {
+  /* basic box styling */
+    .box-style { @apply shadow rounded-lg; }
+        /* this styles the floating top bar basic practice information */
+    .top-bar { @apply top-0 z-99 sticky flex justify-between items-center;
+      @apply bg-linear-to-b from-green-100 to-green-300;}
+    /* the sidebar author pic, or really, centered and rounded */
+    .author-pic { @apply shadow mx-auto rounded-full w-full;}
+    
+    .page-wrapper { @apply mx-auto p-4 w-full;}
+    
+    .side-bar {@apply bg-linear-to-b from-green-300 to-transparent;
+    
+    }
+  }
+
+@layer components {
+
+  .product input {
+    border: 1px solid teal;
+    border-radius: 0.25rem;
+    font-size: 1.125rem;
+    line-height: 1.25rem;
+    padding: 0.2rem;
+  }
+  .product button {
+    background: teal;
+    border: none;
+    border-radius: 0.25rem;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 800;
+    line-height: 1.1rem;
+    padding: 0.25rem;
+    width: 110px;
+    height: 30px;
+    margin-bottom: 40px;
+  }
+  .product h2 {
+    font-size: 1.25rem;
+  }
+  .product .price {
+    font-weight: 800;
+  }
+  .product .description {
+    font-style: italic;
+  }
+
+  }
+
+  
+/*    nav { @apply container;}
+    nav ul {@apply justify-between items-center container;}
+    nav ul li { @apply shadow-lg;
+        @apply rounded-full h-full text-center text-nowrap;
+        @apply bg-linear-to-r hover:bg-linear-to-l from-rose-100 to-transparent p-0.5 border-red-200 border-r border-b rounded-full;
+        :hover {@apply border-t border-l translate-y-0.5;}
+        }    
+
+    nav ul li a { @apply m-1 w-auto;
+      @apply  text-red-400 no-underline;}
+
+    nav ul li ul {@apply bg-rose-100;}
+*/

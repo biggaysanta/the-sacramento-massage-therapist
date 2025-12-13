@@ -1,39 +1,150 @@
 
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
+@plugin "flyonui";
 
-@layer theme {--color-base: oklch(1 0.1 120);
-    --color-base-100: oklch(0.95 0.1 120); 
-    --color-base-200: oklch(0.9 0.1 120); 
-        --color-base-300: oklch(0.8 0.1 120); 
-    --color-base-400: oklch(0.6 0.1 120); 
-    --color-base-500: oklch(0.5 0.1 120);
-    --color-base-600: oklch(0.4 0.1 120); 
-    --color-base-700: oklch(0.2 0.1 120); 
-    --color-base-800: oklch(0.15 0.1 120); 
-    --color-base-900: oklch(0.1 0.1 120); 
+@theme {
+
+  --color-dusk: oklch(0.05 0 0);
+  --color-deep-ink: oklch(var(--color-deep-ink-950));
+  --color-sandalwood: oklch(var(--color-sandalwood-300));
+  --color-dusty-rose: oklch(var(--color-dusty-rose-200));
+  --color-french-rose: oklch(var(--color-french-rose-300));
+  --color-muted-clay: oklch(var(--color-muted-clay-300));
+  --color-palest-yellow: oklch(var(--color-palest-yellow-50));
+  --color-whisper-green: oklch(var(--color-whisper-green-100));
+      
+  --color-base-content: oklch(var(--color-muted-clay));
+
+  --color-deep-ink-50: oklch(0.96 0.01 240);
+  --color-deep-ink-100: oklch(0.92 0.02 240);
+  --color-deep-ink-200: oklch(0.84 0.04 240);
+  --color-deep-ink-300: oklch(0.75 0.06 240);
+  --color-deep-ink-400: oklch(0.66 0.07 240);
+  --color-deep-ink-500: oklch(0.57 0.08 240);
+  --color-deep-ink-600: oklch(0.48 0.07 240);
+  --color-deep-ink-700: oklch(0.39 0.06 240);
+  --color-deep-ink-800: oklch(0.30 0.05 240);
+  --color-deep-ink-900: oklch(0.21 0.04 240);
+  --color-deep-ink-950: oklch(0.12 0.03 240);       /* Original deep-ink */
+
+  --color-sandalwood-50: oklch(0.98 0.001 44);
+  --color-sandalwood-100: oklch(0.95 0.002 44);
+  --color-sandalwood-200: oklch(0.88 0.003 44);
+  --color-sandalwood-300: oklch(0.81 0.004 44);
+  --color-sandalwood-400: oklch(0.74 0.004 44);
+  --color-sandalwood-500: oklch(0.67 0.004 44);
+  --color-sandalwood-600: oklch(0.60 0.004 44);
+  --color-sandalwood-700: oklch(0.53 0.003 44);
+            /* Original sandalwood is ~750 */
+  --color-sandalwood-800: oklch(0.46 0.003 44);
+  --color-sandalwood-900: oklch(0.39 0.002 44);
+  --color-sandalwood-950: oklch(0.32 0.002 44);
+
+  --color-dusty-rose-50: oklch(0.99 0.005 19);
+  --color-dusty-rose-100: oklch(0.97 0.008 19);
+  --color-dusty-rose-200: oklch(0.94 0.01 19);       /* Original dusty-rose */
+  --color-dusty-rose-300: oklch(0.91 0.012 19);
+  --color-dusty-rose-400: oklch(0.88 0.015 19);
+  --color-dusty-rose-500: oklch(0.85 0.018 19);
+  --color-dusty-rose-600: oklch(0.82 0.02 19);
+  --color-dusty-rose-700: oklch(0.79 0.022 19);
+  --color-dusty-rose-800: oklch(0.76 0.025 19);
+  --color-dusty-rose-900: oklch(0.73 0.028 19);
+  --color-dusty-rose-950: oklch(0.70 0.03 19);
+
+  --color-french-rose-50: oklch(0.99 0.01 18);
+  --color-french-rose-100: oklch(0.96 0.02 18);
+  --color-french-rose-200: oklch(0.91 0.03 18);
+
+/* Original french-rose */
+  --color-french-rose-300: oklch(0.85 0.04 18);
+
+  --color-french-rose-400: oklch(0.79 0.05 18);
+  --color-french-rose-500: oklch(0.73 0.06 18);
+  --color-french-rose-600: oklch(0.67 0.05 18);
+  --color-french-rose-700: oklch(0.61 0.04 18);
+  --color-french-rose-800: oklch(0.55 0.03 18);
+  --color-french-rose-900: oklch(0.49 0.02 18);
+  --color-french-rose-950: oklch(0.43 0.01 18);
+
+  --color-muted-clay-50: oklch(0.98 0.02 20);
+    --color-muted-clay-100: oklch(0.95 0.03 20);
+    --color-muted-clay-200: oklch(0.86 0.05 20);
+
+/* original muted clay */
+    --color-muted-clay-300: oklch(0.77 0.07 20);
+
+    --color-muted-clay-400: oklch(0.68 0.08 20);
+    --color-muted-clay-500: oklch(0.59 0.09 20);
+    --color-muted-clay-600: oklch(0.50 0.08 20);
+    --color-muted-clay-700: oklch(0.41 0.07 20);
+    --color-muted-clay-800: oklch(0.32 0.06 20);
+    --color-muted-clay-900: oklch(0.23 0.05 20);
+    --color-muted-clay-950: oklch(0.18 0.04 20);
+  
+    /* Original palest-yellow */
+    --color-palest-yellow-50: oklch(0.99 0.009 90);
+  
+    --color-palest-yellow-100: oklch(0.97 0.012 90);
+    --color-palest-yellow-200: oklch(0.94 0.015 90);
+    --color-palest-yellow-300: oklch(0.91 0.018 90);
+    --color-palest-yellow-400: oklch(0.88 0.021 90);
+    --color-palest-yellow-500: oklch(0.85 0.024 90);
+    --color-palest-yellow-600: oklch(0.82 0.027 90);
+    --color-palest-yellow-700: oklch(0.79 0.03 90);
+    --color-palest-yellow-800: oklch(0.76 0.033 90);
+    --color-palest-yellow-900: oklch(0.73 0.036 90);
+    --color-palest-yellow-950: oklch(0.70 0.039 90);
+    
+    /* Original whisper-green */
+    --color-whisper-green-50: oklch(0.99 0.0045 130);  
+  
+    --color-whisper-green-100: oklch(0.97 0.006 130);
+    --color-whisper-green-200: oklch(0.94 0.008 130);
+    --color-whisper-green-300: oklch(0.91 0.01 130);
+    --color-whisper-green-400: oklch(0.88 0.012 130);
+    --color-whisper-green-500: oklch(0.85 0.014 130);
+    --color-whisper-green-600: oklch(0.82 0.016 130);
+    --color-whisper-green-700: oklch(0.79 0.018 130);
+    --color-whisper-green-800: oklch(0.76 0.02 130);
+    --color-whisper-green-900: oklch(0.73 0.022 130);
+    --color-whisper-green-950: oklch(0.70 0.024 130);
+    
+}
+
+@layer base {
+  @import "skeleton.css";
+
+}
+  
+@layer components {
+.box-style { @apply shadow-lg md:shadow-xl lg:shadow-2xl;
+@apply m-0.5 p-2;
+}
+.btn {@apply shadow 
+    rounded-lg md:rounded-2xl w-full text-nowrap; }
+
+  .top-bar { @apply top-0 z-99 sticky flex justify-between items-center;
+  @apply bg-linear-to-b from-green-100 to-green-300;}
+
+  
+  .author-pic { @apply shadow-lg mx-auto rounded-full w-full;}
+
 }
     
-@layer utilities {
-    .box-style { @apply shadow rounded-lg; }
-    .top-bar { @apply top-0 z-99 sticky flex justify-between items-center bg-linear-to-b from-green-50 to-green-300;}
-    .author-pic { @apply mx-auto rounded-full;}
-    .page-wrapper { @apply mx-auto max-w-4xl;}
-}
-@layer base {
-    body { @apply bg-gradient-to-t from-green-50 to-green-900 no-underline;}
-    header { @apply mb-1;
-     }
-     a {@apply no-underline;}
-}
-@layer components {
-  
-    nav { @apply justify-between items-center navbar-center;}
-    nav ul {}
-    nav ul li { @apply shadow-lg;
-        @apply items-center rounded-full h-full text-center text-nowrap;
-        @apply justify-between bg-linear-to-r hover:bg-linear-to-l from-red-100 to-transparent border-red-200 border-r border-b;}
-        nav ul li:hover {@apply border-t border-l translate-y-0.5;}    
 
-    nav ul li a { @apply m-1 w-auto text-red-400 no-underline;}
-    }
+  
+/*    nav { @apply container;}
+    nav ul {@apply justify-between items-center container;}
+    nav ul li { @apply shadow-lg;
+        @apply rounded-full h-full text-center text-nowrap;
+        @apply bg-linear-to-r hover:bg-linear-to-l from-rose-100 to-transparent p-0.5 border-red-200 border-r border-b rounded-full;
+        :hover {@apply border-t border-l translate-y-0.5;}
+        }    
+
+    nav ul li a { @apply m-1 w-auto;
+      @apply  text-red-400 no-underline;}
+
+    nav ul li ul {@apply bg-rose-100;}
+*/

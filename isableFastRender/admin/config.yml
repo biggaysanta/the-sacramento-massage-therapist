@@ -1,0 +1,48 @@
+local_backend: true
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "static/uploads"
+public_folder: "/public"
+collections:
+  - name: "blog"
+    label: "Blog Entries"
+    folder: "content/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Featured Image", name: "featured_image", widget: "image" }
+      - { label: "Tags", name: "tags", widget: "list" }
+      - {  label: "Summary", name: "summary", widget: "text"  }
+      - { label: "Author", name: "author", widget: "string" }
+  - name: "services"
+    label: "Services"
+    description: "I offer four bodywork services, and one private class."
+    folder: "content/services"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Icon", name: "icon", widget: "image" }
+      - { label: "Starting at", name: "price", widget: "string" }
+      - { label: "Features", name: "features", widget: "list" }
+      - { label: "Call to Action Text", name: "cta-text", widget: "string" }
+      - { label: "Call to Action URL", name: "cta-url", widget: "string" }
+  - name: "announcements"
+    label: "Announcements"
+    folder: "content/announcements"
+    create: true
+    slug: "{{slug}}"
+    fields: 
+      - { label: "Headline", name: "headline", widget: "string" }
+      - { label: "Message", name: "message", widget: "text" }
+      - { label: "Link Text", name: "link-text", widget: "string" }
+      - { label: "Link URL", name: "link-url", widget: "string" }
+      - { label: "Expiry Date", name: "expirydate", widget: "datetime" }
+      - { label: "Icon", name: "icon", widget: "image" }
+      - { label: "Coupon Code", name: "coupon-code", widget: "string" }

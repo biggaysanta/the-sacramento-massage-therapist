@@ -1,0 +1,14 @@
+    {{ with $services := site.GetPage "section" "services" }}
+      <h3>{{ .LinkTitle }}</h3>
+      {{ .Content }}
+      <div id="services-wrapper" class="items-top gap-1 grid-flow-row bg-sky-100 wrap-anywhere box-style">
+      {{ range $services.Pages }}
+        
+      <details class="m-2 p-2 border text-black dark:text-neutral-50 box-style endless-clouds">
+          <summary class="even:bg-gray-400 odd:bg-gray-100 pr-0.5 border border-gray-800 text-sm box-style">{{ .Title }}</summary>
+          <div class="bg-base-200 p-0.5 box-style">{{ .Content }}</div>
+          
+        </details>
+      {{ end }}
+      </div>
+  {{ end }}

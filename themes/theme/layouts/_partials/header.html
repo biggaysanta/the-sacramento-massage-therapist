@@ -1,11 +1,10 @@
 
-<header class="box-style">
-<div id="logo and title" class="justify-between items-center gap-4 grid grid-cols-3 bg-red-100 w-full text-black dark:text-neutral-50 text-sm">
-<div class="col-span-1 aspect-video"><img src="{{ site.Params.logo }}"></div>
-<div id="title and subtitle" class="col-span-2"><h1 class="text-shadow-gray-100 text-shadow-xl">{{ site.Title }}</h1>
+<header>
+<div id="logo and title" class="">
+<div id="title and subtitle" class="col-span-3 text-center bg-contain bg-center bg-no-repeat bg-[url({{ site.Params.logo}})] overflow-none"><h1 class="">{{ site.Title }}</h1>
 <h2>{{ site.Params.subtitle | safeHTML }}</h2></div>
 </div>
-<div id="menu" role="navigation" class="flex md:flex-row flex-col flex-wrap justify-between items-center w-full box-style">
+<div id="menu" role="navigation" >
 {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
 </div>
 </header>

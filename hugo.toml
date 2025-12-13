@@ -3,12 +3,17 @@ languageCode = 'en-us'
 title = 'The Sacramento Massage Therapist'
 theme = 'theme'
 [params]
-logo='/images/logo.svg'
- subtitle = 'Paul Brown, CMT<sub>CAMTC 17813</sub><br/>Expert Massage Therapist in Sacramento'
- author = 'Paul Brown, CMT'
-address = '717 K St, Suite 204, Sacramento'
-phone = '916-534-8772'
-
+  booklink='https://paulbrown.noterro.com'
+  logo='/images/logo.svg'
+   subtitle = 'Paul Brown, CMT<sub>CAMTC 17813</sub><br/>Expert Massage Therapist in Sacramento'
+  author = 'Paul Brown, CMT'
+  address = '717 K St, Suite 204, Sacramento'
+  phone = '916-534-8772'
+  mainSections = ['blog','about']
+  [pagination]
+    diableAliases = false
+    pagerSize = 10
+    path = "page"
 [build]
   [build.buildStats]
     enable = true
@@ -32,18 +37,52 @@ name='home'
 url='/'
 weight=1
 [[menu.main]]
-name='book now!'
+name='Book Now!'
 url='https://paulbrown.noterro.com'
 weight=2
+[[menu.main.params]]
+class='btn-book-now'
 [[menu.main]]
-name='buy eGift cards'
+name='Buy eGift cards'
 url='https://squareup.com/order'
 weight=3
+[[menu.main.params]]
+class='btn-egift-cards'
 [[menu.main]]
-name='contact'
-url='/#contact'
-weight=4
-[[menu.main]]
-name='location'
-url='/#location'
+name='Contact'
+url='/contact'
 weight=5
+[[menu.main]]
+name='Location'
+url='/location'
+weight=6
+[[menu.main]]
+name='Blog'
+url= '/blog'
+weight=4
+
+[[menu.footer]]
+name='about'
+url='/#about'
+identifier='about'
+weight=4
+[[menu.footer]]
+name='terms of service'
+parent='about'
+url='/terms'
+weight=5
+[[menu.footer]]
+name='book now!'
+url='https://paulbrown.noterro.com'
+weight=1
+parent='about'
+[[menu.footer]]
+name='sms terms of service'
+url='/sms-terms-of-service'
+weight=6
+parent='about'
+[[menu.footer]]
+name='colophon'
+url='/colophon'
+weight=7
+parent='about'

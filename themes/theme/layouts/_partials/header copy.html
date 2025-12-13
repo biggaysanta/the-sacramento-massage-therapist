@@ -1,0 +1,11 @@
+
+<header class="box-style">
+<div id="logo and title" class="justify-between items-center gap-4 grid grid-cols-3 bg-red-100 text-black dark:text-neutral-50 text-sm px=1 box-style">
+<div class="col-span-1 aspect-video"><img src="{{ site.Params.logo }}"></div>
+<div id="title and subtitle" class="col-span-2"><h1 class="text-shadow-gray-100 text-shadow-xl">{{ site.Title }}</h1>
+<h2>{{ site.Params.subtitle | safeHTML }}</h2></div>
+</div>
+<div id="menu" role="navigation" class="flex md:flex-row flex-col flex-wrap justify-between items-center box-style">
+{{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+</div>
+</header>

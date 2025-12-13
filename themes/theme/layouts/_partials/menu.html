@@ -11,8 +11,9 @@ Renders a menu for the given menu ID.
 {{- $menuID := .menuID }}
 
 {{- with index site.Menus $menuID }}
-  <nav aria-label="{{ $menuID }} menu" class="flex md:flex-row box-style">
-    <ul class="flex md:flex-row flex-col justify-between items-center list-none">
+  <nav aria-label="{{ $menuID }} menu">
+    <ul>
+
       {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
     </ul>
   </nav>
@@ -23,9 +24,9 @@ Renders a menu for the given menu ID.
   {{- range .menuEntries }}
     {{- $attrs := dict "href" .URL }}
     {{- if $page.IsMenuCurrent .Menu . }}
-      {{- $attrs = merge $attrs (dict "class" "active no-underline" "aria-current" "page") }}
+      {{- $attrs = merge $attrs (dict "class" "active no-underline " "aria-current" "page") }}
     {{- else if $page.HasMenuCurrent .Menu .}}
-      {{- $attrs = merge $attrs (dict "class" "ancestor" "aria-current" "true") }}
+      {{- $attrs = merge $attrs (dict "class" "ancestor no-underline" "aria-current" "true") }}
     {{- end }}
     {{- $name := .Name }}
     {{- with .Identifier }}
@@ -33,7 +34,7 @@ Renders a menu for the given menu ID.
         {{- $name = . }}
       {{- end }}
     {{- end }}
-    <li class="flex flex-row justify-center items-center m-2">
+    <li class="{{ with .Params.class }}{{ . }}{{ end }}">
       <a
         {{- range $k, $v := $attrs }}
           {{- with $v }}

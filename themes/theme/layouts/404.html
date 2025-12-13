@@ -1,0 +1,18 @@
+{{define "main"}}
+<main>
+<h3>Oops, appears to be a non-existent link</h3>
+<p>That Paul, what a silly.</p>
+<p>While he tries to fix that, take a look at these five random pages!</p>
+<p>I mean really, that Paul, too clever by half</p>
+<ul>
+    {{ $p := site.GetPage "Section" "blog"}}
+    {{ $p = $p.Pages}}
+    {{ range collections.D time.Now.YearDay 5 ($p | len) }}
+      {{ with (index $p .) }}
+        <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+      {{ end }}
+    {{ end }}
+  </ul>
+  <a href="{{site.Params.booklink}}" class="btn-book-now">And if that's not what you seek, book yourself a massage session!</a>
+</main>
+  {{end}}

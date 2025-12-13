@@ -1,0 +1,25 @@
+{{/* this is a button shortcode, takes up to three parameters:
+
+title, url, class, either explicitly named OR and only OR positional parameters*/}}
+
+{{ $title := "Click Appointments Here" }}
+{{ $url := "https://paulbrown.noterro.com/" }}
+{{ $class := "button btn-gradient-success" }}
+
+{{/* Check if the user used Named params (title="...") or Positional ("...") */}}
+{{ if .IsNamedParams }}
+  {{/* Named Params Logic */}}
+  {{ with .Get "title" }}{{ $title = . }}{{ end }}
+  {{ with .Get "url" }}{{ $url = . }}{{ end }}
+  {{ with .Get "class" }}{{ $class = . }}{{ end }}
+{{ else }}
+  {{/* Positional Params Logic: 0=title, 1=url, 2=class */}}
+  {{ with .Get 0 }}{{ $title = . }}{{ end }}
+  {{ with .Get 1 }}{{ $url = . }}{{ end }}
+  {{ with .Get 2 }}{{ $class = . }}{{ end }}
+{{ end }}
+
+{{/* Render the button */}}
+<button href="{{ $url | safeURL }}" class="{{ $class }}" role="button">
+    {{ $title }}
+</button>

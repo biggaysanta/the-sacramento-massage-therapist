@@ -6,5 +6,5 @@ subtitle = 'Paul Brown, CMT<sub>CAMTC. 17813</sub>'
 slug='/'
 +++
 
-## Hello, friend, and welcome!  I'm Paul Brown, and this is my bodywork practice
-
+## Hello, friend, and welcome!
+### I'm Paul Brown, and this is my bodywork practice:

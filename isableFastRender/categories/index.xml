@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on The Sacramento Massage Therapist</title>
+    <link>http://localhost:1313/categories/</link>
+    <description>Recent content in Categories on The Sacramento Massage Therapist</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 08 Oct 2025 05:37:40 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bodywork</title>
+      <link>http://localhost:1313/categories/bodywork/</link>
+      <pubDate>Thu, 30 Jan 2025 21:30:22 +0000</pubDate>
+      <guid>http://localhost:1313/categories/bodywork/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Technique</title>
+      <link>http://localhost:1313/categories/technique/</link>
+      <pubDate>Thu, 30 Jan 2025 21:30:22 +0000</pubDate>
+      <guid>http://localhost:1313/categories/technique/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Anatomy</title>
+      <link>http://localhost:1313/categories/anatomy/</link>
+      <pubDate>Sat, 27 May 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/anatomy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Referral Plan</title>
+      <link>http://localhost:1313/categories/referral-plan/</link>
+      <pubDate>Wed, 10 Nov 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/referral-plan/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Massage</title>
+      <link>http://localhost:1313/categories/massage/</link>
+      <pubDate>Thu, 11 Aug 2016 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/massage/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Policies</title>
+      <link>http://localhost:1313/categories/policies/</link>
+      <pubDate>Thu, 14 Jul 2005 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/policies/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>About Paul</title>
+      <link>http://localhost:1313/categories/about-paul/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/about-paul/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
