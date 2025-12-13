@@ -1,0 +1,33 @@
+{{ define "main" }}
+<article class="w-full">
+    
+    <!-- 1. Title -->
+    <h1 class="mb-4 font-extrabold text-slate-950 text-4xl lg:text-5xl">
+        {{ .Title }}
+    </h1>
+
+    <!-- 2. Metadata (Date) -->
+    {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+    {{ $dateHuman := .Date | time.Format ":date_long" }}
+    <p class="flex items-center mb-6 text-slate-500 text-sm">
+        <!-- INVOKING MATERIAL ICON: "calendar_today" -->
+        <span class="mr-2 text-base material-icons">calendar_today</span>
+        <time datetime="{{ $dateMachine }}" class="font-medium">{{ $dateHuman }}</time>
+    </p>
+
+    <!-- 3. Main Content -->
+    <div class="pb-8 border-stone-200 border-b content-body">
+        {{ .Content }}
+    </div>
+
+    <!-- 4. Tags/Terms -->
+    <div class="flex flex-wrap items-center space-x-2 mt-8 text-sm">
+        <span class="mr-2 font-semibold text-slate-600">
+            <!-- INVOKING FONT AWESOME ICON (Original) -->
+            <i class="mr-1 fas fa-tags"></i> Tags:
+        </span>
+        {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+    </div>
+
+</article>
+{{ end }}

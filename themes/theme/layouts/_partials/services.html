@@ -1,7 +1,7 @@
     {{ with $services := site.GetPage "section" "services" }}
       <h3>{{ .LinkTitle }}</h3>
       {{ .Content }}
-      <div id="services-wrapper" class="items-top gap-1 grid-flow-row bg-sky-100 wrap-anywhere box-style">
+      <div id="services-wrapper" class="services-wrapper">
       {{ range $services.Pages }}
         
       <details class="m-2 p-2 border text-black dark:text-neutral-50 box-style endless-clouds">

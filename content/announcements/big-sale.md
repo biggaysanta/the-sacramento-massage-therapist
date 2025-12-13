@@ -3,9 +3,11 @@ title: Big eGift Card Sale!
 subtitle: Save from 10% to 40%
 expiryDate: 2025-12-24
 weight: 1
-link: https://app.squareup.com/gift/BGPPNS6KGJ7WM/order
-hero: images/SVG/golden-bow.png
 tags: front, sale
+params:
+    link: https://app.squareup.com/gift/BGPPNS6KGJ7WM/order
+    hero: /images/svg/golden-bow.svg
+
 ---
 Looking for that perfect gift for a special someone?  You've come to the right place!
 

@@ -1,0 +1,23 @@
+{{/*
+    This shortcode creates a container with a dimming overlay over a specified background image.
+    The dimming is achieved by stacking a semi-transparent black gradient (rgba(0,0,0,0.4)) 
+    on top of the SVG/image URL using Tailwind's arbitrary value syntax for background-image.
+    
+    Usage in Markdown/HTML:
+    {{< dim_bg url="/path/to/my/image.svg" >}}
+        Your content here.
+    {{< /dim_bg >}}
+    
+    To override default styling:
+    {{< dim_bg url="/path/to/my/image.svg" class="my-8 w-full h-96" >}}
+        ...
+    {{< /dim_bg >}}
+--> 
+<div class="
+    {{ $defaultContentClass }} 
+    {{ $extraClasses }}
+    bg-[linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('{{ $url }}')] 
+    bg-cover bg-center 
+">
+    {{ .Inner }}
+</div>*/}}

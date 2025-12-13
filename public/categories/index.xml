@@ -23,6 +23,20 @@
       <description></description>
     </item>
     <item>
+      <title>Announcement</title>
+      <link>http://localhost:1313/categories/announcement/</link>
+      <pubDate>Tue, 06 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/announcement/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sale</title>
+      <link>http://localhost:1313/categories/sale/</link>
+      <pubDate>Tue, 06 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/sale/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Research</title>
       <link>http://localhost:1313/categories/research/</link>
       <pubDate>Wed, 31 Jul 2024 00:00:00 +0000</pubDate>
@@ -37,6 +51,13 @@
       <description></description>
     </item>
     <item>
+      <title>News</title>
+      <link>http://localhost:1313/categories/news/</link>
+      <pubDate>Fri, 08 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/news/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Massage</title>
       <link>http://localhost:1313/categories/massage/</link>
       <pubDate>Mon, 30 Oct 2023 00:00:00 +0000</pubDate>
@@ -48,13 +69,6 @@
       <link>http://localhost:1313/categories/science/</link>
       <pubDate>Mon, 30 Oct 2023 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/categories/science/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Announcement</title>
-      <link>http://localhost:1313/categories/announcement/</link>
-      <pubDate>Wed, 14 Jun 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/categories/announcement/</guid>
       <description></description>
     </item>
     <item>
@@ -79,24 +93,10 @@
       <description></description>
     </item>
     <item>
-      <title>News</title>
-      <link>http://localhost:1313/categories/news/</link>
-      <pubDate>Tue, 16 May 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/categories/news/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Referral Plan</title>
       <link>http://localhost:1313/categories/referral-plan/</link>
       <pubDate>Wed, 10 Nov 2021 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/categories/referral-plan/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Sale</title>
-      <link>http://localhost:1313/categories/sale/</link>
-      <pubDate>Sun, 14 Jun 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/categories/sale/</guid>
       <description></description>
     </item>
     <item>

@@ -1,0 +1,171 @@
+{{/* This partial contains the HTML structure and the controlling JavaScript 
+for the first-load email subscription modal.
+
+It should be placed near the closing </body> tag of your main layout 
+(e.g., in layouts/partials/footer.html or directly in your base template).
+
+USAGE: {{ partial "modal_signup.html" . }}
+*/}}
+<!--
+======================================
+EMAIL SUBSCRIPTION MODAL (Initial Load)
+======================================
+-->
+<!-- Added 'hidden' class to ensure it uses display: none until opened by JS -->
+<div id="email-modal" class="hidden modal-hidden z-[100] fixed inset-0 flex justify-center items-center p-4 modal-backdrop">
+
+<!-- Modal Dialog Container -->
+<div class="bg-white shadow-2xl rounded-2xl w-full max-w-lg overflow-hidden modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    
+    <!-- Close Button -->
+    <div class="flex justify-end p-3">
+        <button type="button" id="close-modal-btn" class="text-slate-400 hover:text-slate-700 transition-colors">
+            <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+    </div>
+
+    <!-- Modal Content -->
+    <div class="p-6 md:p-8 text-center">
+        
+        <!-- Icon -->
+        <div class="flex justify-center items-center bg-indigo-100 mx-auto mb-6 rounded-full w-16 h-16 text-indigo-600">
+            <i data-lucide="mail" class="w-8 h-8"></i>
+        </div>
+
+        <!-- Title & Description -->
+        <h2 id="modal-title" class="mb-2 font-extrabold text-slate-900 text-3xl">
+            Join Our Inner Circle
+        </h2>
+        <p class="mb-6 text-slate-600">
+            Sign up today to get exclusive content, early access, and 10% off your first order!
+        </p>
+
+        <!-- Mailchimp Form -->
+        <!-- 
+            ACTION URL and HIDDEN INPUT VALUES MUST BE UPDATED
+        -->
+        <form id="mailchimp-form" action="[YOUR_MAILCHIMP_FORM_ACTION_URL]" method="post" target="_blank" novalidate>
+            
+            <div class="flex sm:flex-row flex-col gap-3 mb-4">
+                <input 
+                    type="email" 
+                    name="EMAIL" 
+                    id="mce-EMAIL"
+                    placeholder="Your email address" 
+                    required
+                    class="sm:flex-1 shadow-inner px-4 py-3 border border-slate-300 focus:border-indigo-500 rounded-xl focus:ring-indigo-500 w-full text-slate-800 transition-shadow"
+                >
+                
+                <button 
+                    type="submit" 
+                    id="mc-embedded-subscribe"
+                    name="subscribe"
+                    class="bg-indigo-600 hover:bg-indigo-700 shadow-indigo-200 shadow-lg px-6 py-3 rounded-xl focus:outline-none focus:ring-4 focus:ring-indigo-300 w-full sm:w-auto font-semibold text-white transition-all"
+                >
+                    Subscribe
+                </button>
+            </div>
+
+            <!-- Required Mailchimp Hidden Fields (UPDATE THESE!) -->
+            <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                <input type="text" name="b_[YOUR_U_VALUE]_[YOUR_ID_VALUE]" tabindex="-1" value="">
+                <input type="hidden" name="u" value="YOUR_U_VALUE">
+                <input type="hidden" name="id" value="YOUR_ID_VALUE">
+            </div>
+        </form>
+
+        <p class="mt-4 text-slate-400 text-xs">
+            We hate spam as much as you do. Unsubscribe anytime.
+        </p>
+    </div>
+</div>
+</div>
+
+<script>
+// Initialize Lucide icons
+lucide.createIcons();
+
+const MODAL_KEY = 'signupModalShown';
+const modal = document.getElementById('email-modal');
+const closeModalBtn = document.getElementById('close-modal-btn');
+const openModalBtn = document.getElementById('open-modal-btn');
+const form = document.getElementById('mailchimp-form');
+
+/**
+ * Opens the modal. Removes 'hidden' immediately, then removes 'modal-hidden' for transition.
+ */
+const openModal = () => {
+    modal.classList.remove('hidden');
+    // Timeout needed to let the browser apply display: flex before starting the opacity transition
+    setTimeout(() => {
+        modal.classList.remove('modal-hidden');
+    }, 10); 
+};
+
+/**
+ * Closes the modal. Adds 'modal-hidden' for transition, then adds 'hidden' to remove from flow.
+ */
+const closeModal = () => {
+    // 1. Start transition out (opacity/transform)
+    modal.classList.add('modal-hidden'); 
+    
+    // 2. After transition (300ms in CSS), hide it fully using display: none
+    setTimeout(() => {
+        modal.classList.add('hidden');
+        // Set the localStorage flag after the user closes the modal
+        try {
+            localStorage.setItem(MODAL_KEY, 'true');
+        } catch (e) {
+            console.warn('LocalStorage unavailable, modal may reappear.', e);
+        }
+    }, 300); // Wait for CSS transition duration
+};
+
+/**
+ * Main logic to show the modal on the first visit only.
+ */
+const initializeModal = () => {
+    let hasShown = false;
+    try {
+        hasShown = localStorage.getItem(MODAL_KEY);
+    } catch (e) {
+        // Ignore if localStorage is not available
+    }
+
+    if (!hasShown) {
+        // Wait for a small delay to ensure the page is rendered smoothly
+        setTimeout(() => {
+            openModal();
+        }, 1000); // 1-second delay
+    }
+};
+
+// Event Listeners
+
+// Check if the open button exists (it's in the main layout, not here)
+if (openModalBtn) {
+    openModalBtn.addEventListener('click', openModal);
+}
+
+closeModalBtn.addEventListener('click', closeModal);
+
+// Click outside the modal content to close
+modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        closeModal();
+    }
+});
+
+// Form submission (We call closeModal here to immediately dismiss the modal after the user submits the email.)
+form.addEventListener('submit', closeModal);
+
+// Initialize on page load (Autopop)
+window.onload = initializeModal;
+
+// Placeholder logic - REMOVE when using real Mailchimp action
+form.addEventListener('submit', (e) => {
+    console.log('Form submitted (placeholder action).');
+    // e.preventDefault(); 
+});
+
+</script>

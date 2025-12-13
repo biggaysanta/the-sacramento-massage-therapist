@@ -1,0 +1,62 @@
+{{ define "main" }}
+<div class="w-full">
+    
+    <header class="mb-8">
+        <h1 class="mb-2 font-bold text-slate-950 text-4xl">{{ .Title }}</h1>
+        <!-- Optional: Section description -->
+        {{ with .Content }}
+            <div class="max-w-none text-slate-700 prose">{{ . }}</div>
+        {{ end }}
+    </header>
+
+    <!-- Loop through all content pages in the current section -->
+    {{ range .Paginator.Pages }}
+    
+    <article class="bg-white shadow-md hover:shadow-lg mb-6 p-6 border-rose-300 border-l-4 rounded-lg transition-shadow">
+        
+        <!-- Post Title Link -->
+        <h2 class="mb-2 font-semibold text-2xl">
+            <a href="{{ .Permalink }}" class="text-slate-900 hover:text-rose-600 transition-colors">
+                {{ .Title }}
+            </a>
+        </h2>
+        
+        <!-- Metadata -->
+        {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+        {{ $dateHuman := .Date | time.Format ":date_long" }}
+        <p class="flex items-center mb-4 text-slate-500 text-sm">
+            <span class="mr-2 text-base material-icons">calendar_today</span>
+            <time datetime="{{ $dateMachine }}" class="mr-4 font-medium">{{ $dateHuman }}</time>
+            
+            <!-- Author (if available) -->
+            {{ with .Params.author }}
+                <i class="mr-1 fas fa-user"></i> <span>{{ . }}</span>
+            {{ end }}
+        </p>
+        
+        <!-- Post Summary -->
+        <div class="mb-4 text-slate-700">
+            <!-- Use .Summary to get the truncated post content -->
+            {{ .Summary }}
+        </div>
+        
+        <!-- Read More Link -->
+        <a href="{{ .Permalink }}" class="inline-flex items-center font-medium text-rose-600 hover:text-rose-800 text-sm transition-colors">
+            Read More
+            <i class="fa-arrow-right ml-2 text-xs fas"></i>
+        </a>
+        
+        <!-- Tags/Terms Partial (Optional, uncomment if you want tags on the list page) -->
+        {{/* <div class="mt-4">
+            {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+        </div>
+        */}}
+
+    </article>
+    
+    {{ end }}
+
+    <!-- Paginator (if you have many posts) -->
+    {{ partial "pagination.html" . }}
+</div>
+{{ end }}

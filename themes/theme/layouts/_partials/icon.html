@@ -1,0 +1,25 @@
+{{/* icon.html create a material design icon span
+
+usage:
+
+icon.html (dict "icon" "icon-name" "class" "class"*/}}
+
+{{/* Initialize defaults */}}
+{{ $icon := "info" }}
+{{/* CHANGED DEFAULT CLASS to the modern Material Symbols Outlined style */}}
+{{ $defaultClass := "mr-2 text-base material-symbols-outlined" }} 
+{{ $class := $defaultClass }}
+
+{{/* Override defaults if passed in the dictionary */}}
+{{ with .icon}}
+{{ $icon = . }}
+{{ end }}
+
+{{/* Override and merge class if passed in the dictionary */}}
+{{ with .class}}
+ {{/* Safely combine the default class with any user-supplied classes */}}
+{{ $class = printf "%s %s" $defaultClass . }}
+{{ end }}
+
+{{/* Use the calculated $class variable here */}}
+<span class="{{ $class }}">{{$icon}}</span>

@@ -1,13 +1,22 @@
-    {{ with $announcements := site.GetPage "section" "announcements" }}
-      <h3>{{ .LinkTitle }}</h3>
-      {{ .Content }}
-      <div id="a-wrapper" class="">
-      {{ range $announcements.Pages }}
-            <details class="flex flex-wrap m-2 p-2 w-full" name="announce">
-          <summary class="">{{ .Title }}</summary>
-          <div class="">{{ .Content }}</div>
+{{ with $announcements := site.GetPage "section" "announcements" }}
+  <h3>{{ .LinkTitle }}</h3>
+  {{ .Content }}
+  
+ {{/*  <!-- FIX: Corrected the malformed HTML tag from '< id=' to '<div id=' -->*/}}
+  <div id="a-wrapper" class="">
+    {{ range $announcements.Pages }}
+      <details class="" name="announce">
+        <summary class="">{{ .Title }}</summary>
+          <div class="bg-green-50">
+          {{ .Content }}
+        </div>
+          {{ with .Params.Link }}
+            <!-- FIX: Replaced non-standard gradient classes with the custom 'btn-primary-link' -->
+            <a href="{{ . }}" target="_blank" class="btn-primary-link">Click Here!</a>
+          {{ end }}
           
-        </details>
-      {{ end }}
-      </div>
-  {{ end }}
+
+      </details>
+    {{ end }}
+  </div>
+{{ end }}
