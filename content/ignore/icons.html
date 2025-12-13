@@ -1,0 +1,49 @@
+{{/* icon.html - Dynamic icon rendering based on collection group
+    
+USAGE:
+
+Requires a dictionary with keys:
+- name: The specific icon name (e.g., 'home' or 'rocket')
+- group: The icon collection ('m-s' for Material Symbols, 'fa' for Font Awesome)
+- class: Optional additional utility classes
+*/}}
+
+{{/* Retrieve parameters with defaults */}}
+{{ $iconName := .name | default "info" }} 
+{{ $iconGroup := .group | default "m-s" }} 
+{{ $extraClass := .class | default "" }}
+
+{{ $baseClass := "" }}
+{{ $tag := "" }}
+{{ $content := "" }}
+
+{{/* --- 1. Determine Base Class and Tag based on Group --- */}}
+{{ if eq $iconGroup "fa" }}
+{{/* Font Awesome: Uses <i> tag, requires 'fas' (Solid) or similar prefix */}}
+{{ $tag = "i" }}
+{{ $content = "" }}
+
+{{/* Standard Font Awesome prefix. We ensure the name is prefixed with 'fa-' for the class. */}}
+{{ $baseClass = "fas" }}
+{{ $iconClass := printf "fa-%s" (strings.TrimPrefix "fa-" $iconName) }}
+
+{{ else }}
+{{/* Default or 'm-s' (Material Symbols): Uses <span> tag */}}
+{{ $tag = "span" }}
+{{ $content = $iconName }}
+
+{{/* Material Symbols base class (requires font link in <head>) */}}
+{{ $baseClass = "material-symbols-outlined" }} 
+{{ $iconClass := "" }}
+{{ end }}
+
+{{/* --- 2. Combine all classes --- */}}
+{{ $finalClass := printf "%s %s %s" $baseClass $iconClass $extraClass }}
+
+{{/* --- 3. Render the correct element --- */}}
+{{ if eq $tag "i" }}
+<i class="{{ $finalClass }}">{{ $content | safeHTML }}</i>
+{{ else }}
+{{/* Fallback to span for Material Symbols or any unknown group */}}
+<span class="{{ $finalClass }}">{{ $content }}</span>
+{{ end }}
