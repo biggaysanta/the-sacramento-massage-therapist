@@ -41,14 +41,16 @@
 
   
 <header>
-<div id="logo and title" class="">
-<div id="title and subtitle" class="col-span-3 text-center bg-contain bg-center bg-no-repeat bg-[url(/images/logo.svg)] overflow-none"><h1 class="">The Sacramento Massage Therapist</h1>
-<h2>Paul Brown, CMT<sub>CAMTC 17813</sub></h2></div>
+<div id="logo and title" class="flex grid-cols-3"><div class="col-span-1">
+    <img src="/images/logo.svg" class="aspect-video" alt="logo">
+    </div>
+<div id="title and subtitle" class="col-span-2 bg-contain bg-no-repeat bg-center mb-2 overflow-nonej text-center"><h1 class="">The Sacramento Massage Therapist</h1>
+<h2>Paul Brown, CMT<sub>CAMTC 17813</sub></h2>
+<p>Expert Massage Therapist in Sacramento </p></div>
 </div>
-<div id="menu" role="navigation" >
 
-  <nav aria-label="main menu">
-    <ul>
+  <nav aria-label="main menu" class="">
+    <ul >
     <li class="">
 
       <a href="/">
@@ -72,7 +74,7 @@
 
 
 
-<span class="mr-2 text-base material-symbols-outlined mr-2 text-base material-symbols">home</span>
+<span class="mr-2 text-base material-symbols-outlined mr-1 text-base material-symbols">home</span>
       home</a>
     </li>
     <li class="btn-book-now">
@@ -150,7 +152,7 @@
 
 
 
-<span class="mr-2 text-base material-symbols-outlined mr-2 text-base material-symbols">news</span>
+<span class="mr-2 text-base material-symbols-outlined mr-1 text-base material-symbols">news</span>
       Blog</a>
     </li>
     <li class="">
@@ -176,7 +178,7 @@
 
 
 
-<span class="mr-2 text-base material-symbols-outlined mr-2 text-base material-symbols">call</span>
+<span class="mr-2 text-base material-symbols-outlined mr-1 text-base material-symbols">call</span>
       Contact</a>
     </li>
     <li class="">
@@ -202,13 +204,13 @@
 
 
 
-<span class="mr-2 text-base material-symbols-outlined mr-2 text-base material-symbols">home</span>
+<span class="mr-2 text-base material-symbols-outlined mr-1 text-base material-symbols">info</span>
       Location</a>
     </li>
     </ul>
   </nav>
+  </nav>
 
-</div>
 </header>
   <div class="content-wrapper">
   
@@ -675,12 +677,60 @@
     </ul>
 </div>
 
-  </main>
+  <aside class="p-1 w-[35%]">
+    <div class="box-style side-bar">
+    <div class="bg-french-rose dark:bg-muted-clay-800 shadow-french-rose shadow-md p-4 rounded-lg">
+  <h3 id="about" class="bg-radial from-0% from-green-600 to-transparent mb-4 pb-2 border-muted-clay border-b-2 font-heading font-bold text-deep-ink dark:text-white text-xl">About Paul Brown, CMT</h3>
+  <div class="bg-base-200 p-4 box-style" >
+    <img src="/images/author-photo.png" class="author-pic" alt="Paul Brown" >
+    <p class="">Paul Brown is a Certified Massage Therapist in Sacramento, CA, with a passion for helping people live better, more pain-free lives.</p>
+    <button class="text-gray-50 btn-gradient-info" href="/about">Read More...</button>
+  </div>
+</div>
+    <div class="bg-muted-clay shadow-lg p-4 rounded-lg text-white">
+  <h3 class="bg-white dark:bg-muted-clay mb-4 pb-2 border-muted-clay border-b-2 font-heading font-bold text-deep-ink dark:text-white text-xl">Recent Posts</h3>
+  <ul class="space-y-2">
+    
+    
+      <li>
+        <a href="/blog/what-you-need-to-kinow-zero-point-advanced-myofascial-release/" class="text-deep-ink dark:text-white hover:underline"></a>
+      </li>
+    
+      <li>
+        <a href="/blog/back-pain-massage-myofascial-release/" class="text-deep-ink dark:text-white hover:underline">Back Pain Massage: Myofascial Release Techniques</a>
+      </li>
+    
+      <li>
+        <a href="/blog/massage-holiday-gift-ideas/" class="text-deep-ink dark:text-white hover:underline">Holiday Gift Idea - eGift Cards from Paul Brown Massage Therapy!</a>
+      </li>
+    
+      <li>
+        <a href="/blog/massage-boosts-immunity/" class="text-deep-ink dark:text-white hover:underline">Research: Massage Boosts Immune System and Reduces Stress</a>
+      </li>
+    
+      <li>
+        <a href="/blog/my-depression-and-anxiety-strategy/" class="text-deep-ink dark:text-white hover:underline">My Depression and Anxiety Strategy</a>
+      </li>
+    
+  </ul>
+</div>
+    <div class="bg-white dark:bg-muted-clay-800 shadow-md p-4 rounded-lg">
+  <h3 class="mb-4 pb-2 border-muted-clay border-b-2 font-heading font-bold text-deep-ink dark:text-white text-xl">Follow Me</h3>
+  <ul class="space-y-2">
+    <li><a href="https://www.linkedin.com/in/your-profile" class="text-deep-ink dark:text-white hover:underline" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+    <li><a href="https://www.instagram.com/your-profile" class="text-deep-ink dark:text-white hover:underline" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+    <li><a href="https://www.facebook.com/your-profile" class="text-deep-ink dark:text-white hover:underline" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+    
+  </ul>
+</div>
+</div>
+  </aside>
+
   </div>
   <footer>
     
-  <nav aria-label="footer menu">
-    <ul>
+  <nav aria-label="footer menu" class="">
+    <ul >
     <li class="">
 
       <a href="/#about">
@@ -704,7 +754,7 @@
 
 
 
-<span class="mr-2 text-base material-symbols-outlined mr-2 text-base material-symbols">info</span>
+<span class="mr-2 text-base material-symbols-outlined mr-1 text-base material-symbols">info</span>
       about</a>
         <ul>
     <li class="">
@@ -730,7 +780,7 @@
 
 
 
-<span class="mr-2 text-base material-symbols-outlined mr-2 text-base material-symbols">calendar_today</span>
+<span class="mr-2 text-base material-symbols-outlined mr-1 text-base material-symbols">calendar_today</span>
       book now!</a>
     </li>
     <li class="">
@@ -756,7 +806,7 @@
 
 
 
-<span class="mr-2 text-base material-symbols-outlined mr-2 text-base material-symbols">policy</span>
+<span class="mr-2 text-base material-symbols-outlined mr-1 text-base material-symbols">policy</span>
       terms of service</a>
     </li>
     <li class="">
@@ -782,7 +832,7 @@
 
 
 
-<span class="mr-2 text-base material-symbols-outlined mr-2 text-base material-symbols">sms</span>
+<span class="mr-2 text-base material-symbols-outlined mr-1 text-base material-symbols">sms</span>
       sms terms of service</a>
     </li>
     <li class="">
@@ -808,12 +858,13 @@
 
 
 
-<span class="mr-2 text-base material-symbols-outlined mr-2 text-base material-symbols">build_circle</span>
+<span class="mr-2 text-base material-symbols-outlined mr-1 text-base material-symbols">build_circle</span>
       colophon</a>
     </li>
         </ul>
     </li>
     </ul>
+  </nav>
   </nav>
 
 <p>Copyright 2025. All rights reserved.</p>

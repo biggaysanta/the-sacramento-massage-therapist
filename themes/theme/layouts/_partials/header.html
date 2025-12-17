@@ -1,10 +1,11 @@
 
 <header>
-<div id="logo and title" class="">
-<div id="title and subtitle" class="col-span-3 text-center bg-contain bg-center bg-no-repeat bg-[url({{ site.Params.logo}})] overflow-none"><h1 class="">{{ site.Title }}</h1>
-<h2>{{ site.Params.subtitle | safeHTML }}</h2></div>
+<div id="logo and title" class="flex grid-cols-3"><div class="col-span-1">
+    <img src="{{ .Site.Params.logo }}" class="aspect-video" alt="logo">
+    </div>
+<div id="title and subtitle" class="col-span-2 bg-contain bg-no-repeat bg-center mb-2 overflow-nonej text-center"><h1 class="">{{ site.Title }}</h1>
+<h2>{{ site.Params.subtitle | safeHTML }}</h2>
+<p>{{ site.Params.tagline}} </p></div>
 </div>
-<div id="menu" role="navigation" >
 {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
-</div>
 </header>
