@@ -1,4 +1,4 @@
-/*! tailwindcss v4.1.17 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v4.1.18 | MIT License | https://tailwindcss.com */
 @layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
@@ -874,6 +874,9 @@
   .block {
     display: block;
   }
+  .contents {
+    display: contents;
+  }
   .flex {
     display: flex;
   }
@@ -1582,9 +1585,6 @@
   }
   .text-white {
     color: var(--color-white);
-  }
-  .italic {
-    font-style: italic;
   }
   .no-underline {
     text-decoration-line: none;
