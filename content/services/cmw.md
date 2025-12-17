@@ -17,4 +17,4 @@ A Couples Massage Workshop is a private two-hour class for you and one other per
 
 Each participant receives about 45 minutes of individual instruction, and will learn Swedish Massage techniques that can be applied up the back of the body, but adapted to the front of the body as well. It’s a great way to bond with your special someone!
 
-[\[icon name="comment-sms" prefix="fas"\] Book Now!](sms:9165348772)
+ [Book Now!](sms:9165348772)
