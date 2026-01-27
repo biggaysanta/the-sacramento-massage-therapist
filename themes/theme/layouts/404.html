@@ -7,7 +7,7 @@
 <ul>
     {{ $p := site.GetPage "Section" "blog"}}
     {{ $p = $p.Pages}}
-    {{ range collections.D time.Now.YearDay 5 ($p | len) }}
+    {{ range collections.Dtime.Now.YearDay 5 ($p | len) }}
       {{ with (index $p .) }}
         <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
       {{ end }}
